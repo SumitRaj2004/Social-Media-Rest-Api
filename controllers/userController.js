@@ -52,7 +52,7 @@ const userController = {
                 return res.status(404).json({success : false, message : "Invalid Credentials"})
             }
             const token = jwt.sign({userId : user._id}, process.env.SECRET_KEY, {expiresIn : "24h"});
-            res.cookie("token", token, {maxAge : 86400000, httpOnly : true});
+            res.cookie("token", token, {maxAge : 86400000});
             res.status(200).json({success : true, user : user, token : token});
         }catch(err){
             res.status(500).json({success : false, message : err.message})
