@@ -13,6 +13,6 @@ router.get("/user", auth, userController.getUser)
 router.patch("/user", auth, userController.updateUser); 
 router.post("/user/delete", auth, userController.deleteUser);
 router.post("/forget-password", userController.forgetPassword);
-router.get("/reset-password/:id/:token", userController.resetPassword)
+router.post("/reset-password/:id/:token", userController.resetPassword)
 
 export default router;
