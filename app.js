@@ -6,8 +6,7 @@ import postRouter from "./routes/postRoutes.js";
 
 const app = express();
 app.use(cors({
-    origin : "http://127.0.0.1:1000",
-    credentials : true
+    origin : "*"
 }))
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
@@ -16,6 +15,7 @@ app.use(cookieParser())
 app.use("/api/v1", userRouter)
 app.use("/api/v1/post", postRouter);
 app.use("*", (req, res, next) => {
+    console.log("inside going not found")
     res.status(404).json({success : false, message : "page not found"})
 })
 
