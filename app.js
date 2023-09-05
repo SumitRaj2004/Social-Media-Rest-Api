@@ -5,7 +5,9 @@ import userRouter from "./routes/userRoutes.js"
 import postRouter from "./routes/postRoutes.js";
 
 const app = express();
-app.use(cors())
+app.use(cors({
+    origin : "http://127.0.0.1:5500"
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 app.use(cookieParser())
