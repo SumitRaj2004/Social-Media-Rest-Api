@@ -201,7 +201,6 @@ const userController = {
         }
     },
     resetPassword : async(req, res) => {
-        console.log("inside reset password")
         try {
             const {id, token} = req.params;
             const {password} = req.body;

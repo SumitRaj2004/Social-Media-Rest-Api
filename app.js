@@ -15,7 +15,6 @@ app.use(cookieParser())
 app.use("/api/v1", userRouter)
 app.use("/api/v1/post", postRouter);
 app.use("*", (req, res, next) => {
-    console.log("inside going not found")
     res.status(404).json({success : false, message : "page not found"})
 })
 
